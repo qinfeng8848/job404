@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'simple_form', '~> 4.0'
 gem 'devise', '~> 4.2'
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 
 group :development, :test do

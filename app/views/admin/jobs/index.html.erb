@@ -14,7 +14,7 @@
     <tbody>
       <% @jobs.each do |job| %>
         <tr>
-          <td>#</td>
+          <td><%= render_job_status(job)%></td>
           <td><%= link_to(job.title, admin_job_path(job)) %></td>
           <td><%= job.description %></td>
           <td><%= job.created_at %> </td>
