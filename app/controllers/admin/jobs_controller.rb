@@ -50,6 +50,18 @@ class Admin::JobsController < ApplicationController
     end
   end
 
+  def publish
+    @job = Job.find(params[:id])
+    @job.publish!
+    redirect_back(fallback_location: root_path)
+  end
+
+  def hide
+    @job = Job.find(params[:id])
+    @job.hide!
+    redirect_back(fallback_location: root_path)
+  end
+
   private
   def job_params
     params.require(:job).permit(:title, :description,:wage_upper_bound, :wage_lower_bound, :contact_email,:is_hidden)
