@@ -1,6 +1,6 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!,only: [:new,:create,:edit,:update,:destroy]
-
+  before_action :require_is_admin
 
   def index
     @jobs = Job.all
@@ -41,6 +41,12 @@ class Admin::JobsController < ApplicationController
     @job.destroy
     flash[:alert] = "记录已经删除!"
     redirect_to admin_jobs_path
+  end
+
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = "请使用管理员操作."
+    end
   end
 
   private
