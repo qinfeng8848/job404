@@ -41,6 +41,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'simple_form', '~> 4.0'
 gem 'devise', '~> 4.2'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+gem 'carrierwave', '~> 1.0.0'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
 
 group :development, :test do
