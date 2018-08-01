@@ -1,7 +1,19 @@
 <div class="col-md-12">
-  <div class="job">
-    <%= link_to("占位按钮", root_path, class: "btn btn-primary pull-right") %>
+
+  <div class="dropdown">
+
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"  data-toggle="dropdown" >
+     排序
+     </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li> <%= link_to("按薪资上限", jobs_path(:order => "by_lower_bound")) %></li>
+          <li> <%= link_to("按薪资下限", jobs_path(:order => "by_upper_bound")) %> </li>
+          <li> <%= link_to("按发布时间", jobs_path) %> </li>
+        </ul>
+
   </div>
+
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -20,8 +32,8 @@
           <td><%= job.created_at %> </td>
           <td>
 
-              <%= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
+              <%#= link_to("Edit", edit_job_path(job), class: "btn btn-sm btn-default")%>
+              <%#= link_to("Delete", job_path(job),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
 
           </td>
