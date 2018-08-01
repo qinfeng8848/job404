@@ -1,16 +1,16 @@
 <div class="col-md-12">
 
   <div class="dropdown">
-
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"  data-toggle="dropdown" >
+    <span class="pull-right">
+    <a class="btn btn-secondar dropdown-toggle" href="#" role="button"  data-toggle="dropdown" >
      排序
-     </a>
+   </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
           <li> <%= link_to("按薪资上限", jobs_path(:order => "by_lower_bound")) %></li>
           <li> <%= link_to("按薪资下限", jobs_path(:order => "by_upper_bound")) %> </li>
           <li> <%= link_to("按发布时间", jobs_path) %> </li>
         </ul>
-
+    </span>
   </div>
 
 
