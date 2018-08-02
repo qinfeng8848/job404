@@ -9,6 +9,7 @@ class Admin::JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @resume = @job.resumes
   end
 
   def new
